@@ -229,7 +229,7 @@ const Sidebar: React.FC<SidebarProps> = ({
       </div>
 
       {/* Navigation */}
-      <div className="overflow-y-auto h-[calc(100vh-200px)] py-4">
+      <div className="overflow-y-auto h-[calc(100vh-200px)] pt-4 pb-32">
         <nav className="px-4 space-y-2">
           {navItems.map((item, index) => (
             <NavItem
