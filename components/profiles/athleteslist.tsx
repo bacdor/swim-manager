@@ -364,34 +364,6 @@ const AthletesList = () => {
         gpa: 3.95,
       },
     },
-    {
-      id: 26,
-      name: "Xavier Davis",
-      year: "Freshman",
-      group: "Distance",
-      email: "x.davis@university.edu",
-      phone: "(555) 456-7890",
-      eligibility: "Eligible",
-      photo: "/static/default.webp",
-      academic: {
-        standing: "Dean's List",
-        gpa: 3.98,
-      },
-    },
-    {
-      id: 27,
-      name: "Yvonne Evans",
-      year: "Senior",
-      group: "Sprint",
-      email: "y.evans@university.edu",
-      phone: "(555) 567-8901",
-      eligibility: "Eligible",
-      photo: "/static/default.webp",
-      academic: {
-        standing: "Good Standing",
-        gpa: 3.8,
-      },
-    },
   ];
 
   const [searchQuery, setSearchQuery] = useState("");
