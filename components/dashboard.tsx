@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import ChatComponent from "@/components/chat";
 import AthletesList from "./profiles/athleteslist";
+import StaffList from "./profiles/stafflist";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Home,
@@ -317,6 +318,8 @@ const MainContent = ({
         <ChatComponent />
       ) : activeItem === "Profiles-Athletes" ? (
         <AthletesList />
+      ) : activeItem === "Profiles-Staff" ? (
+        <StaffList />
       ) : (
         <>
           <TopNav />
