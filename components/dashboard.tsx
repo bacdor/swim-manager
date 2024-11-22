@@ -211,7 +211,7 @@ const Sidebar: React.FC<SidebarProps> = ({
         <div className="flex items-center justify-center">
           <div className="relative">
             <img
-              src="/api/placeholder/64/64"
+              src="/static/sarah.webp"
               alt="Profile"
               className="w-12 h-12 rounded-full object-cover border-2 border-blue-500"
             />
@@ -293,14 +293,6 @@ const TopNav = () => (
             <Bell className="h-6 w-6" />
             <span className="absolute top-0 right-0 block h-2 w-2 rounded-full bg-red-500 transform translate-x-1/2 -translate-y-1/2"></span>
           </button>
-          <div className="flex items-center space-x-3">
-            <img
-              className="h-8 w-8 rounded-full object-cover"
-              src="/api/placeholder/32/32"
-              alt="Profile"
-            />
-            <ChevronDown className="h-4 w-4 text-gray-500" />
-          </div>
         </div>
       </div>
     </div>

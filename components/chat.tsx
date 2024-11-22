@@ -38,26 +38,26 @@ const ChatComponent: React.FC = () => {
     {
       id: 1,
       sender: "Sarah Connor",
-      avatar: "/api/placeholder/32/32",
+      avatar: "/static/sarah.webp",
       message:
         "Good morning team! Just a reminder about today's practice schedule changes.",
       time: "9:00 AM",
       type: "text",
+      isReply: true,
     },
     {
       id: 2,
       sender: "John Smith",
-      avatar: "/api/placeholder/32/32",
+      avatar: "/static/john.webp",
       message:
         "Thanks coach! Will the pool temperature be adjusted for the sprint session?",
       time: "9:02 AM",
       type: "text",
-      isReply: true,
     },
     {
       id: 3,
       sender: "Emma Thompson",
-      avatar: "/api/placeholder/32/32",
+      avatar: "/static/emma.webp",
       message: "I've shared the latest competition results in the team folder.",
       time: "9:15 AM",
       type: "file",
@@ -66,10 +66,19 @@ const ChatComponent: React.FC = () => {
     {
       id: 4,
       sender: "Sarah Connor",
-      avatar: "/api/placeholder/32/32",
+      avatar: "/static/sarah.webp",
       message:
         "Yes, maintenance has confirmed the temperature will be at 78°F for the session.",
       time: "9:20 AM",
+      type: "text",
+      isReply: true,
+    },
+    {
+      id: 2,
+      sender: "John Smith",
+      avatar: "/static/john.webp",
+      message: "Also, is it possible to finish earlier today?",
+      time: "9:32 AM",
       type: "text",
     },
   ]);
@@ -102,8 +111,8 @@ const ChatComponent: React.FC = () => {
     if (newMessage.trim()) {
       const newMsg: Message = {
         id: messages.length + 1,
-        sender: "John Smith", // Current user
-        avatar: "/api/placeholder/32/32",
+        sender: "Sarah Connor", // Current user
+        avatar: "/static/sarah.webp",
         message: newMessage,
         time: new Date().toLocaleTimeString([], {
           hour: "2-digit",
@@ -125,8 +134,8 @@ const ChatComponent: React.FC = () => {
     if (file) {
       const newMsg: Message = {
         id: messages.length + 1,
-        sender: "John Smith",
-        avatar: "/api/placeholder/32/32",
+        sender: "Sarah Connor",
+        avatar: "/static/sarah.webp",
         message: `Uploaded file: ${file.name}`,
         time: new Date().toLocaleTimeString([], {
           hour: "2-digit",
