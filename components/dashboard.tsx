@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import ChatComponent from "@/components/chat";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Home,
@@ -119,13 +120,6 @@ const Sidebar: React.FC<SidebarProps> = ({
     {
       icon: MessageSquare,
       label: "Communication",
-      children: [
-        "Team Chat",
-        "Group Channels",
-        "Direct Messages",
-        "Announcements",
-        "Emergency Broadcasts",
-      ],
     },
     {
       icon: Users,
@@ -326,13 +320,19 @@ const MainContent = ({
         sidebarOpen ? "ml-64" : "ml-20"
       }`}
     >
-      <TopNav />
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <h1 className="text-2xl font-semibold mb-6">
-          {activeItem || "Dashboard"}
-        </h1>
-        {/* Content area for the active section */}
-      </div>
+      {activeItem === "Communication" ? (
+        <ChatComponent />
+      ) : (
+        <>
+          <TopNav />
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <h1 className="text-2xl font-semibold mb-6">
+              {activeItem || "Dashboard"}
+            </h1>
+            {/* Content area for the active section */}
+          </div>
+        </>
+      )}
     </div>
   );
 };
