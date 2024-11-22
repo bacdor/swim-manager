@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import ChatComponent from "@/components/chat";
+import AthletesList from "./profiles/athleteslist";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import {
   Home,
@@ -124,7 +125,7 @@ const Sidebar: React.FC<SidebarProps> = ({
     {
       icon: Users,
       label: "Profiles",
-      children: ["Athletes", "Staff", "Emergency Contacts", "Medical Records"],
+      children: ["Athletes", "Staff"],
     },
     {
       icon: Activity,
@@ -314,6 +315,8 @@ const MainContent = ({
     >
       {activeItem === "Communication" ? (
         <ChatComponent />
+      ) : activeItem === "Profiles-Athletes" ? (
+        <AthletesList />
       ) : (
         <>
           <TopNav />
