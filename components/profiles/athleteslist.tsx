@@ -1,11 +1,49 @@
 import React, { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
-import { Search, ChevronDown, GraduationCap, Mail, Phone } from "lucide-react";
+import {
+  Search,
+  ChevronDown,
+  GraduationCap,
+  Mail,
+  Phone,
+  ArrowLeft,
+} from "lucide-react";
+import AthleteProfileEmma from "./athletes/emma";
 
 const AthletesList = () => {
   const athletes = [
     {
       id: 1,
+      name: "Emma Thompson",
+      year: "Sophomore",
+      group: "Distance",
+      email: "e.thompson@university.edu",
+      phone: "(555) 234-5678",
+      eligibility: "Eligible",
+      photo: "/static/emma.webp",
+      academic: {
+        standing: "Dean's List",
+        gpa: 3.85,
+      },
+    },
+    {
+      id: 2,
+      name: "John Smith",
+      year: "Junior",
+      group: "Sprint",
+      email: "j.smith@university.edu",
+      phone: "(555) 123-4567",
+      residence: "North Campus Housing, Room 304",
+      major: "Computer Science",
+      eligibility: "Eligible",
+      photo: "/static/john.webp",
+      academic: {
+        standing: "Good Standing",
+        gpa: 3.45,
+      },
+    },
+    {
+      id: 3,
       name: "Alice Thompson",
       year: "Senior",
       group: "Sprint",
@@ -19,7 +57,7 @@ const AthletesList = () => {
       },
     },
     {
-      id: 2,
+      id: 4,
       name: "Brandon Miller",
       year: "Junior",
       group: "IM",
@@ -33,7 +71,7 @@ const AthletesList = () => {
       },
     },
     {
-      id: 3,
+      id: 5,
       name: "Catherine Wilson",
       year: "Sophomore",
       group: "Distance",
@@ -47,7 +85,7 @@ const AthletesList = () => {
       },
     },
     {
-      id: 4,
+      id: 6,
       name: "David Johnson",
       year: "Freshman",
       group: "Sprint",
@@ -61,7 +99,7 @@ const AthletesList = () => {
       },
     },
     {
-      id: 5,
+      id: 7,
       name: "Emily Davis",
       year: "Senior",
       group: "IM",
@@ -75,7 +113,7 @@ const AthletesList = () => {
       },
     },
     {
-      id: 6,
+      id: 8,
       name: "Frank Garcia",
       year: "Junior",
       group: "Distance",
@@ -89,7 +127,7 @@ const AthletesList = () => {
       },
     },
     {
-      id: 7,
+      id: 9,
       name: "Grace Hernandez",
       year: "Sophomore",
       group: "Sprint",
@@ -103,7 +141,7 @@ const AthletesList = () => {
       },
     },
     {
-      id: 8,
+      id: 10,
       name: "Henry Jackson",
       year: "Freshman",
       group: "IM",
@@ -117,7 +155,7 @@ const AthletesList = () => {
       },
     },
     {
-      id: 9,
+      id: 11,
       name: "Isabella King",
       year: "Senior",
       group: "Distance",
@@ -131,7 +169,7 @@ const AthletesList = () => {
       },
     },
     {
-      id: 10,
+      id: 12,
       name: "James Lee",
       year: "Junior",
       group: "Sprint",
@@ -145,7 +183,7 @@ const AthletesList = () => {
       },
     },
     {
-      id: 11,
+      id: 13,
       name: "Katherine Martinez",
       year: "Sophomore",
       group: "IM",
@@ -159,7 +197,7 @@ const AthletesList = () => {
       },
     },
     {
-      id: 12,
+      id: 14,
       name: "Liam Nguyen",
       year: "Freshman",
       group: "Distance",
@@ -173,7 +211,7 @@ const AthletesList = () => {
       },
     },
     {
-      id: 13,
+      id: 15,
       name: "Mia O'Connor",
       year: "Senior",
       group: "Sprint",
@@ -187,7 +225,7 @@ const AthletesList = () => {
       },
     },
     {
-      id: 14,
+      id: 16,
       name: "Noah Patel",
       year: "Junior",
       group: "IM",
@@ -201,7 +239,7 @@ const AthletesList = () => {
       },
     },
     {
-      id: 15,
+      id: 17,
       name: "Olivia Quinn",
       year: "Sophomore",
       group: "Distance",
@@ -215,7 +253,7 @@ const AthletesList = () => {
       },
     },
     {
-      id: 16,
+      id: 18,
       name: "Patrick Robinson",
       year: "Freshman",
       group: "Sprint",
@@ -229,7 +267,7 @@ const AthletesList = () => {
       },
     },
     {
-      id: 17,
+      id: 19,
       name: "Queen Smith",
       year: "Senior",
       group: "IM",
@@ -243,7 +281,7 @@ const AthletesList = () => {
       },
     },
     {
-      id: 18,
+      id: 20,
       name: "Robert Turner",
       year: "Junior",
       group: "Distance",
@@ -257,7 +295,7 @@ const AthletesList = () => {
       },
     },
     {
-      id: 19,
+      id: 21,
       name: "Sophia White",
       year: "Sophomore",
       group: "Sprint",
@@ -271,7 +309,7 @@ const AthletesList = () => {
       },
     },
     {
-      id: 20,
+      id: 22,
       name: "Thomas Young",
       year: "Freshman",
       group: "IM",
@@ -285,7 +323,7 @@ const AthletesList = () => {
       },
     },
     {
-      id: 21,
+      id: 23,
       name: "Ursula Adams",
       year: "Senior",
       group: "Distance",
@@ -299,7 +337,7 @@ const AthletesList = () => {
       },
     },
     {
-      id: 22,
+      id: 24,
       name: "Victor Baker",
       year: "Junior",
       group: "Sprint",
@@ -313,7 +351,7 @@ const AthletesList = () => {
       },
     },
     {
-      id: 23,
+      id: 25,
       name: "Wendy Clark",
       year: "Sophomore",
       group: "IM",
@@ -327,7 +365,7 @@ const AthletesList = () => {
       },
     },
     {
-      id: 24,
+      id: 26,
       name: "Xavier Davis",
       year: "Freshman",
       group: "Distance",
@@ -341,7 +379,7 @@ const AthletesList = () => {
       },
     },
     {
-      id: 25,
+      id: 27,
       name: "Yvonne Evans",
       year: "Senior",
       group: "Sprint",
@@ -359,6 +397,7 @@ const AthletesList = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [filterGroup, setFilterGroup] = useState("All");
   const [filterYear, setFilterYear] = useState("All");
+  const [athleteProfile, setAthleteProfile] = useState(false);
 
   const groups = ["All", "Sprint", "Distance", "IM"];
   const years = ["All", "Freshman", "Sophomore", "Junior", "Senior"];
@@ -379,7 +418,18 @@ const AthletesList = () => {
     return "text-gray-600";
   };
 
-  return (
+  return athleteProfile ? (
+    <div className="max-w-6xl mx-auto">
+      <button
+        onClick={() => setAthleteProfile(false)}
+        className="mb-2 mt-6 inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors duration-200 font-medium"
+      >
+        <ArrowLeft className="h-5 w-5" />
+        Return to the list
+      </button>
+      <AthleteProfileEmma />
+    </div>
+  ) : (
     <div className="max-w-7xl mx-auto p-6">
       {/* Header and Filters */}
       <div className="mb-6">
@@ -444,7 +494,10 @@ const AthletesList = () => {
             <CardContent className="p-6">
               <div className="flex flex-col space-y-4">
                 {/* Top Row - Basic Info and Academic Status */}
-                <div className="flex items-center justify-between">
+                <div
+                  className="flex items-center justify-between cursor-pointer"
+                  onClick={() => setAthleteProfile(true)}
+                >
                   <div className="flex items-center space-x-4">
                     <img
                       src={athlete.photo}
